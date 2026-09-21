@@ -461,7 +461,55 @@ A: The minimum attendance requirement is 75%.
 Q: 75 attendance
 A: The minimum attendance requirement is 75%.
 
+# COLLEGE ADMINISTRATION
 
+Q: Who is the Secretary of KCE?
+
+A: The Secretary of Kings College of Engineering is Dr. R. Rajendiran.
+
+Q: Who is the KCE Secretary?
+
+A: The Secretary of Kings College of Engineering is Dr. R. Rajendiran.
+
+Q: KCE Secretary yaru?
+
+A: The Secretary of Kings College of Engineering is Dr. R. Rajendiran.
+
+Q: Who is the Principal of KCE?
+
+A: The Principal of Kings College of Engineering is Dr. J. Arputha Vijaya Selvi.
+
+Q: Who is the KCE Principal?
+
+A: The Principal of Kings College of Engineering is Dr. J. Arputha Vijaya Selvi.
+
+Q: KCE Principal yaru?
+
+A: The Principal of Kings College of Engineering is Dr. J. Arputha Vijaya Selvi.
+
+Q: What is the name of the Principal of KCE?
+
+A: The Principal of Kings College of Engineering is Dr. J. Arputha Vijaya Selvi.
+
+Q: Who is the Vice Principal of KCE?
+
+A: The Vice Principal of Kings College of Engineering is Dr. S. Sivakumar.
+
+Q: Who is the KCE Vice Principal?
+
+A: The Vice Principal of Kings College of Engineering is Dr. S. Sivakumar.
+
+Q: KCE Vice Principal yaru?
+
+A: The Vice Principal of Kings College of Engineering is Dr. S. Sivakumar.
+
+Q: What is the name of the Vice Principal?
+
+A: The Vice Principal of Kings College of Engineering is Dr. S. Sivakumar.
+
+Q: Who are the administrative authorities of KCE?
+
+A: The key administrative authorities include the Secretary, Principal and Vice Principal of Kings College of Engineering.
 # DEPARTMENTS AND HODS
 
 Q: Who is the CSE HOD?
