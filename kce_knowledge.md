@@ -1163,3 +1163,81 @@ If the user asks about one specific topic, provide only the relevant information
 If the user asks a broad question such as "Tell me about KCE facilities", provide the relevant major facilities in a structured answer.
 
 If the user asks about latest events, use the latest available KCE event information rather than presenting old events as current.
+# ADMISSION DOCUMENTS REQUIRED
+
+Q: What documents are required for admission?
+
+A: Students are generally required to submit the necessary academic, identity, and supporting documents during the admission process. The exact documents may vary depending on the programme and admission category. Students should refer to the latest KCE admission instructions for the current academic year.
+
+Q: What documents are needed for admission?
+
+A: The documents required for admission may include academic certificates, transfer certificate, community certificate if applicable, identification proof, photographs, and other documents specified by the college. The exact requirements depend on the programme and admission category.
+
+Q: What should I bring for college admission?
+
+A: Students should bring their required academic certificates, transfer certificate, identification proof, photographs, and other documents mentioned in the latest KCE admission instructions.
+
+Q: Documents required for KCE admission?
+
+A: KCE admission requires the documents specified in the current admission instructions. Students should check the latest KCE admission brochure or contact the admission office for the exact document list.
+
+Q: KCE admission-ku enna documents venum?
+
+A: KCE admission-ku academic certificates, transfer certificate, identification proof, photographs, and other required documents venum. Exact document requirements admission category and programme-oda basis-la vary aagalam.
+# KCE COLLEGE RULES AND DRESS CODE
+
+Q: What are the rules of KCE?
+
+A: Students are expected to follow the college rules and dress code. The main rules include:
+1. Mobile phones are strictly not allowed for use on campus. If a student is found using a mobile phone, it may be confiscated.
+2. Students must wear the prescribed lab coat during laboratory sessions.
+3. Girls must pin both sides of their shawl properly.
+4. Boys must wear formal dress.
+5. Leggings are not allowed.
+6. Boys must maintain a proper and neat haircut.
+7. Girls must keep their hair properly tied.
+8. Boys are required to maintain a clean-shaven appearance.
+
+Q: Is mobile phone allowed in KCE?
+
+A: Mobile phone use is strictly not allowed. If a student is found using a mobile phone, it may be confiscated.
+
+Q: Can students use mobile phones in college?
+
+A: No. Mobile phone use is strictly prohibited. If a student is found using a mobile phone, it may be confiscated.
+
+Q: What is the dress code for boys?
+
+A: Boys are required to wear formal dress, maintain a proper and neat haircut, and be clean-shaven.
+
+Q: What is the dress code for girls?
+
+A: Girls should pin both sides of their shawl properly, keep their hair properly tied, and should not wear leggings.
+
+Q: Is lab coat compulsory?
+
+A: Yes. Students must wear a lab coat during laboratory sessions.
+
+Q: Are leggings allowed in KCE?
+
+A: No. Leggings are not allowed.
+
+Q: KCE-la mobile use pannalama?
+
+A: Illa. Mobile phone use strictly allowed illa. Use pannina mobile confiscate pannuvanga.
+
+Q: Lab time-la coat podanuma?
+
+A: Aama. Lab sessions-la students must wear lab coat.
+
+Q: Boys-ku dress code enna?
+
+A: Boys formal dress-la irukanum, haircut neat-ah maintain pannanum, and clean-shaven-ah irukanum.
+
+Q: Girls-ku dress code enna?
+
+A: Girls shawl rendu side-um properly pin pannirukanum, hair properly tie pannirukanum, and leggings allowed illa.
+
+Q: KCE college rules enna?
+
+A: KCE students mobile phone use panna koodadhu, lab sessions-la lab coat compulsory, boys formal dress-la irukanum, girls shawl properly pin pannirukanum, leggings allowed illa, boys neat haircut and clean-shaven-ah irukanum, and girls hair properly tied-ah irukanum.
