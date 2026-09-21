@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% set active = 'events' %}
+{% block title %}Events · KCE{% endblock %}
+
+{% block content %}
+<header class="head">
+  <div class="tile">🗓️</div>
+  <div><h1>Events</h1><p>What is coming up on campus.</p></div>
+</header>
+<p class="note">Sample events. Edit EVENTS in college_data.py.</p>
+
+<div class="timeline">
+  {% for e in events %}
+  <article class="ev"><time>{{ e.date }}</time><h2>{{ e.title }}</h2><p>{{ e.text }}</p></article>
+  {% endfor %}
+</div>
+{% endblock %}

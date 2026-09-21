@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% set active = 'emergency' %}
+{% block title %}Emergency · KCE{% endblock %}
+
+{% block content %}
+<header class="head">
+  <div class="tile">🚨</div>
+  <div><h1>Emergency</h1><p>Numbers to call when you need help fast.</p></div>
+</header>
+
+<section class="sos">
+  <div><div class="big">112</div><p>National emergency number. Works for police, fire and medical help.</p></div>
+  <a href="tel:112">Call 112</a>
+</section>
+
+<div class="calls">
+  {% for n in numbers %}
+  <a class="call" href="tel:{{ n.number|replace('-', '')|replace(' ', '') }}"><span>{{ n.label }}</span><b>{{ n.number }}</b></a>
+  {% endfor %}
+</div>
+{% endblock %}

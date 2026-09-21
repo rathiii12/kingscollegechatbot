@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% set active = 'chat' %}
+{% block title %}AI Chat · KCE{% endblock %}
+
+{% block content %}
+<section class="chatapp">
+
+  <div class="chat-top">
+    <div class="av">🤖</div>
+    <div><b>KCE AI Assistant</b><span class="online">Online</span></div>
+    <select class="lang" id="voiceLang" aria-label="Voice language" title="Voice language">
+      <option value="en-IN">🎙 English</option>
+      <option value="ta-IN">🎙 தமிழ்</option>
+    </select>
+    <button class="btn ghost" id="clear" type="button">New chat</button>
+  </div>
+
+  <div class="log" id="log" aria-live="polite" data-role="{{ role_key }}" data-welcome="{{ welcome }}"></div>
+
+  <div class="suggest" id="suggest">
+    {% for c in chips %}
+      {% if c.endpoint %}
+      <a class="chip chip-link" href="{{ url_for(c.endpoint) }}">{{ c.label }}</a>
+      {% else %}
+      <button class="chip" type="button" data-q="{{ c.q }}">{{ c.label }}</button>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="voice-status" id="voiceStatus" role="status" aria-live="polite" hidden></div>
+
+  <form class="ask" id="askForm" autocomplete="off">
+    <button class="mic" id="mic" type="button" aria-label="Speak your question" aria-pressed="false" title="Speak your question">🎤</button>
+    <input id="q" type="text" placeholder="Ask about courses, hostel, placements…" aria-label="Your question">
+    <button class="btn" id="send" type="submit">Send</button>
+  </form>
+
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<script src="{{ url_for('static', filename='js/kce-chat.js') }}"></script>
+{% endblock %}

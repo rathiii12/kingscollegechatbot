@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% set active = 'map' %}
+{% block title %}Campus Map · KCE{% endblock %}
+
+{% block content %}
+<header class="head">
+  <div class="tile">📍</div>
+  <div><h1>Campus Map</h1><p>Tap a building to see what it is.</p></div>
+</header>
+<p class="note">Sample layout. Edit BUILDINGS in college_data.py, or replace the SVG with your real campus plan.</p>
+
+<div class="split map">
+  <div class="mapwrap">
+    <svg viewBox="0 0 640 400" role="img" aria-label="Campus map">
+      <rect class="ground" width="640" height="400" rx="20"/>
+      <path class="road" d="M0 310H640"/><path class="road" d="M320 154V310"/>
+      {% for b in buildings %}
+      <g class="bldg{% if loop.first %} sel{% endif %}" tabindex="0" role="button"
+         data-name="{{ b.name }}" data-note="{{ b.note }}" aria-label="{{ b.name }}">
+        <rect class="bld" x="{{ b.x }}" y="{{ b.y }}" width="{{ b.w }}" height="{{ b.h }}" rx="12"/>
+        <text x="{{ b.x + b.w // 2 }}" y="{{ b.y + b.h // 2 + 5 }}">{{ b.name }}</text>
+      </g>
+      {% endfor %}
+    </svg>
+  </div>
+  <div class="pinlist">
+    <article class="panel"><h2 id="bName">{{ buildings[0].name }}</h2><p id="bNote" style="margin:0;color:var(--muted)">{{ buildings[0].note }}</p></article>
+    <a class="btn" id="bAsk" href="{{ url_for('chat_page', q='Where is the ' ~ buildings[0].name ~ '?') }}">Ask AI for directions</a>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  var chatUrl = "{{ url_for('chat_page') }}";
+  document.querySelectorAll('.bldg').forEach(function (g) {
+    function pick() {
+      document.querySelectorAll('.bldg').forEach(function (x) { x.classList.toggle('sel', x === g); });
+      document.getElementById('bName').textContent = g.dataset.name;
+      document.getElementById('bNote').textContent = g.dataset.note;
+      document.getElementById('bAsk').href = chatUrl + '?q=' + encodeURIComponent('Where is the ' + g.dataset.name + '?');
+    }
+    g.addEventListener('click', pick);
+    g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
+  });
+</script>
+{% endblock %}

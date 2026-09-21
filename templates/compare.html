@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% set active = 'compare' %}
+{% block title %}Compare Departments · KCE{% endblock %}
+
+{% block content %}
+<header class="head">
+  <div class="tile">⚖️</div>
+  <div><h1>Compare Departments</h1><p>Put two programmes side by side.</p></div>
+</header>
+
+<form method="get" action="{{ url_for('compare') }}" class="cmp">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>
+          <select name="a" aria-label="First department" onchange="this.form.submit()">
+            {% for p in programmes %}<option value="{{ p.slug }}"{% if p.slug == a.slug %} selected{% endif %}>{{ p.name }}</option>{% endfor %}
+          </select>
+        </th>
+        <th>
+          <select name="b" aria-label="Second department" onchange="this.form.submit()">
+            {% for p in programmes %}<option value="{{ p.slug }}"{% if p.slug == b.slug %} selected{% endif %}>{{ p.name }}</option>{% endfor %}
+          </select>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th>Degree</th><td>{{ a.degree }}</td><td>{{ b.degree }}</td></tr>
+      <tr><th>Overview</th><td>{{ a.about }}</td><td>{{ b.about }}</td></tr>
+      <tr><th>Key topics</th>
+        <td><ul>{% for f in a.focus %}<li>{{ f }}</li>{% endfor %}</ul></td>
+        <td><ul>{% for f in b.focus %}<li>{{ f }}</li>{% endfor %}</ul></td>
+      </tr>
+    </tbody>
+  </table>
+  <noscript><button class="btn" type="submit">Compare</button></noscript>
+</form>
+
+<div class="row" style="margin-top:16px">
+  <a class="btn" href="{{ url_for('chat_page', q='Compare ' ~ a.name ~ ' and ' ~ b.name) }}">Ask AI which suits me</a>
+</div>
+{% endblock %}

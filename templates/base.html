@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-tr="slide">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}KCE AI Assistant{% endblock %}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main KCE stylesheet -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/kce.css') }}"
+    >
+
+    {% block head %}{% endblock %}
+</head>
+
+<body data-page="{{ active }}">
+
+    <div class="app">
+
+        <!-- =========================
+             TOP BAR  (phones only)
+             ========================= -->
+        <header class="topbar">
+
+            <button
+                class="tb-btn"
+                id="menuBtn"
+                type="button"
+                aria-label="Open menu"
+                aria-controls="side"
+                aria-expanded="false"
+            >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h10"/></svg>
+            </button>
+
+            <a class="tb-title" href="{{ url_for('chat_page') }}">
+                <span class="tb-logo">{% include "_logo.html" %}</span>KCE AI
+            </a>
+
+            <a
+                class="tb-btn"
+                href="{{ url_for('chat_page', new=1) }}"
+                data-chat="new"
+                aria-label="New chat"
+            >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            </a>
+
+        </header>
+
+
+        <!-- =========================
+             SIDEBAR
+             (a slide-in drawer on phones)
+             ========================= -->
+        <nav class="side" id="side" aria-label="Main">
+
+            <!-- BRAND -->
+            <a
+                class="brand"
+                href="{{ url_for('home') }}"
+                title="Back to home"
+            >
+
+                <div class="brand-mark">
+                    {% include "_logo.html" %}
+                </div>
+
+                <div class="brand-text">
+                    <b>KCE AI</b>
+                    <span>Kings College of Engineering</span>
+                </div>
+
+            </a>
+
+
+            <!-- NEW CHAT -->
+            <a
+                class="newchat"
+                href="{{ url_for('chat_page', new=1) }}"
+                data-chat="new"
+            >
+                <span>＋</span>New chat
+            </a>
+
+
+            <!-- HOME -->
+            <a
+                class="nav"
+                href="{{ url_for('home') }}"
+                {% if active == 'home' %}
+                    aria-current="page"
+                {% endif %}
+            >
+                <span class="ico">🏠</span>
+                <span>Home</span>
+            </a>
+
+
+            <!-- OTHER NAVIGATION -->
+            {% for key, label, icon, endpoint in nav %}
+
+            <a
+                class="nav"
+                href="{{ url_for(endpoint) }}"
+                {% if key == active %}
+                    aria-current="page"
+                {% endif %}
+            >
+
+                <span class="ico">{{ icon }}</span>
+                <span>{{ label }}</span>
+
+            </a>
+
+            {% endfor %}
+
+
+            <!-- RECENT CHATS (filled by kce.js) -->
+            <div class="recent-h">Recent chats</div>
+            <div class="recent" id="recent"></div>
+
+
+            <!-- SIDEBAR MOTTO -->
+            <div class="motto">
+                Seek • Strive • Succeed
+            </div>
+
+        </nav>
+
+
+        <!-- =========================
+             MAIN CONTENT
+             ========================= -->
+        <main class="stage">
+
+            <div class="page">
+
+                {% block content %}
+                {% endblock %}
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- dark backdrop behind the phone drawer -->
+    <div class="scrim" id="scrim"></div>
+
+
+    <!-- Main JavaScript -->
+    <script src="{{ url_for('static', filename='js/kce.js') }}"></script>
+
+
+    <!-- Page-specific JavaScript -->
+    {% block scripts %}
+    {% endblock %}
+
+</body>
+
+</html>

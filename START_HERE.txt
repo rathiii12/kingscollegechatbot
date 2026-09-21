@@ -1,0 +1,58 @@
+KCE CHATBOT  -  START HERE
+==========================
+
+Ithu muzhu project folder. Ellam ulla irukku.
+
+
+FIRST TIME MATTUM
+-----------------
+1. Python install aagirukkanum.  (terminal-la:  python --version)
+2. Indha folder-kulla terminal open pannunga.
+   (File Explorer-la mela address bar-la  powershell  nu type pannitu Enter)
+3. Idhai run pannunga:
+
+       pip install -r requirements.txt
+
+
+ODA VIDA
+--------
+Easy vazhi:   run_kce.bat  -a double click pannunga.
+
+Illa terminal-la:
+
+       $env:HF_TOKEN="hf_unga_token"
+       python app.py
+
+Browser-la:   http://127.0.0.1:5000
+
+HF_TOKEN illama-um velai seiyum. Aana appo AI nalla answer tharaadhu,
+database + website-la irundhu neraiya answer mattum varum.
+
+
+FOLDER-LA ENNA ENNA
+-------------------
+app.py                    pages + chat API
+chatbot.py                bot (database + website + notes + AI)
+chatbot_old_dbonly.py     unga pazhaya chatbot.py (backup)
+college_data.py          courses, map, events, emergency, chips
+seed.py                   database data (python seed.py = database thirumba seed aagum)
+kce_knowledge.md          UNGA NOTES. Kings pathi unmaiyaana details inga ezhudhunga
+kce_site_cache.json       website copy (24 hours-ku oru thadavai thaanaave refresh aagum)
+instance/college.db       database (seed aana)
+templates/                pages (index.html = landing)
+static/css, static/js     styles + scripts
+static/images/            logo.jpg, chatbot.jpg inga podunga
+
+
+UNGA PHOTO / LOGO
+-----------------
+static/images/logo.jpg     unga logo
+static/images/chatbot.jpg  landing page campus photo
+
+Indha 2 file irundha adhai use pannum. Illana backup logo + gradient kaattum.
+Unga real files-ai apdiye inga podunga (peyar exact-ah irukkanum).
+
+
+SEED PANNANUM-NA
+----------------
+seed.py-la data maathina:   python seed.py
